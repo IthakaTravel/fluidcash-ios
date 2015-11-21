@@ -1,0 +1,6 @@
+framework module Pods_FluidCash {
+  umbrella header "Pods-FluidCash-umbrella.h"
+
+  export *
+  module * { export * }
+}
