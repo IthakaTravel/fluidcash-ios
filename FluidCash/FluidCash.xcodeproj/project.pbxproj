@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C643F1A6C49BBC1515D3EDC /* Pods_FluidCash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3860183DDC824DAFC90E01 /* Pods_FluidCash.framework */; };
 		9A07104E1C00908D00115AFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07104D1C00908D00115AFA /* AppDelegate.swift */; };
 		9A0710531C00908D00115AFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0710511C00908D00115AFA /* Main.storyboard */; };
 		9A0710551C00908D00115AFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0710541C00908D00115AFA /* Assets.xcassets */; };
@@ -17,6 +18,8 @@
 		9AC861CE1C00B4210099546F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC861CD1C00B4210099546F /* FBSDKCoreKit.framework */; };
 		9AC861D31C00B9E70099546F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861D21C00B9E70099546F /* WelcomeViewController.swift */; };
 		9AC861D61C00C4BC0099546F /* CandidateFacebookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861D51C00C4BC0099546F /* CandidateFacebookData.swift */; };
+		9AC861DA1C00C8120099546F /* RequestBodyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861D81C00C8120099546F /* RequestBodyProtocol.swift */; };
+		9AC861DD1C00C86D0099546F /* RequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861DC1C00C86D0099546F /* RequestBody.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A3860183DDC824DAFC90E01 /* Pods_FluidCash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FluidCash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A07104A1C00908D00115AFA /* FluidCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FluidCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A07104D1C00908D00115AFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A0710521C00908D00115AFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +60,10 @@
 		9AC861CD1C00B4210099546F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9AC861D21C00B9E70099546F /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Controller/WelcomeViewController.swift; sourceTree = "<group>"; };
 		9AC861D51C00C4BC0099546F /* CandidateFacebookData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CandidateFacebookData.swift; path = Models/CandidateFacebookData.swift; sourceTree = "<group>"; };
+		9AC861D81C00C8120099546F /* RequestBodyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestBodyProtocol.swift; path = Models/Protocols/RequestBodyProtocol.swift; sourceTree = "<group>"; };
+		9AC861DC1C00C86D0099546F /* RequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestBody.swift; path = Models/Protocols/RequestBody.swift; sourceTree = "<group>"; };
+		A39E7078B309041E2A2C5C8F /* Pods-FluidCash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FluidCash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FluidCash/Pods-FluidCash.debug.xcconfig"; sourceTree = "<group>"; };
+		E2E6E6D694B95354BD9CD6C2 /* Pods-FluidCash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FluidCash.release.xcconfig"; path = "Pods/Target Support Files/Pods-FluidCash/Pods-FluidCash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,7 @@
 			files = (
 				9AC861CC1C00B41D0099546F /* FBSDKLoginKit.framework in Frameworks */,
 				9AC861CE1C00B4210099546F /* FBSDKCoreKit.framework in Frameworks */,
+				5C643F1A6C49BBC1515D3EDC /* Pods_FluidCash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		923DC0C74352E9ECFE345DB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A3860183DDC824DAFC90E01 /* Pods_FluidCash.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9A0710411C00908D00115AFA = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +109,8 @@
 				9A0710611C00908D00115AFA /* FluidCashTests */,
 				9A07106C1C00908D00115AFA /* FluidCashUITests */,
 				9A07104B1C00908D00115AFA /* Products */,
+				FB25A9E8C52CECFEA30804B2 /* Pods */,
+				923DC0C74352E9ECFE345DB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,9 +172,28 @@
 		9AC861D41C00C4980099546F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9AC861D71C00C8050099546F /* Protocols */,
 				9AC861D51C00C4BC0099546F /* CandidateFacebookData.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		9AC861D71C00C8050099546F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9AC861DC1C00C86D0099546F /* RequestBody.swift */,
+				9AC861D81C00C8120099546F /* RequestBodyProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		FB25A9E8C52CECFEA30804B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A39E7078B309041E2A2C5C8F /* Pods-FluidCash.debug.xcconfig */,
+				E2E6E6D694B95354BD9CD6C2 /* Pods-FluidCash.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A0710721C00908D00115AFA /* Build configuration list for PBXNativeTarget "FluidCash" */;
 			buildPhases = (
+				BA940531E748BA7698A24357 /* Check Pods Manifest.lock */,
 				9A0710461C00908D00115AFA /* Sources */,
 				9A0710471C00908D00115AFA /* Frameworks */,
 				9A0710481C00908D00115AFA /* Resources */,
+				588E95AE8D2A60A29E160F0D /* Embed Pods Frameworks */,
+				4AB599AC1057EAD333B77AA9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,14 +326,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4AB599AC1057EAD333B77AA9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FluidCash/Pods-FluidCash-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		588E95AE8D2A60A29E160F0D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FluidCash/Pods-FluidCash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA940531E748BA7698A24357 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A0710461C00908D00115AFA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9A07104E1C00908D00115AFA /* AppDelegate.swift in Sources */,
+				9AC861DA1C00C8120099546F /* RequestBodyProtocol.swift in Sources */,
 				9AC861D61C00C4BC0099546F /* CandidateFacebookData.swift in Sources */,
 				9AC861D31C00B9E70099546F /* WelcomeViewController.swift in Sources */,
+				9AC861DD1C00C86D0099546F /* RequestBody.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +521,7 @@
 		};
 		9A0710731C00908D00115AFA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A39E7078B309041E2A2C5C8F /* Pods-FluidCash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -448,6 +540,7 @@
 		};
 		9A0710741C00908D00115AFA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2E6E6D694B95354BD9CD6C2 /* Pods-FluidCash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
 
@@ -48,7 +49,8 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
                     candidateFacebookData.profilePicURL = result.valueForKeyPath("picture.data.url") as? String
                     candidateFacebookData.token = FBSDKAccessToken.currentAccessToken().tokenString
                     
-//                    let candidateFbDetails = Mapper().toJSONString(candidateFacebookData, prettyPrint: false)
+                    let candidateFbDetails = Mapper().toJSONString(candidateFacebookData, prettyPrint: false)
+                    print(" candidate FB details \(candidateFbDetails)")
 //                    NSUserDefaultsUtils.setCandidateFacebookDetails(candidateFbDetails!)
 //                    
 //                    NSUserDefaultsUtils.setLoginSrc(LoginSrc.Facebook.rawValue)
