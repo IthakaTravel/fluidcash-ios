@@ -24,6 +24,8 @@
 		9AC861E21C00D33D0099546F /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861E11C00D33D0099546F /* RouterProtocol.swift */; };
 		9AC861E51C00D36D0099546F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861E41C00D36D0099546F /* Router.swift */; };
 		9AC861E71C00D3D00099546F /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861E61C00D3D00099546F /* AuthRouter.swift */; };
+		9AC861E91C00E47F0099546F /* DataGatheringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861E81C00E47F0099546F /* DataGatheringViewController.swift */; };
+		9AC861EB1C00F3390099546F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC861EA1C00F3390099546F /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		9AC861E11C00D33D0099546F /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterProtocol.swift; path = Models/Protocols/RouterProtocol.swift; sourceTree = "<group>"; };
 		9AC861E41C00D36D0099546F /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Models/Router/Router.swift; sourceTree = "<group>"; };
 		9AC861E61C00D3D00099546F /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthRouter.swift; path = Models/Router/AuthRouter.swift; sourceTree = "<group>"; };
+		9AC861E81C00E47F0099546F /* DataGatheringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataGatheringViewController.swift; path = Controller/DataGatheringViewController.swift; sourceTree = "<group>"; };
+		9AC861EA1C00F3390099546F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A39E7078B309041E2A2C5C8F /* Pods-FluidCash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FluidCash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FluidCash/Pods-FluidCash.debug.xcconfig"; sourceTree = "<group>"; };
 		E2E6E6D694B95354BD9CD6C2 /* Pods-FluidCash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FluidCash.release.xcconfig"; path = "Pods/Target Support Files/Pods-FluidCash/Pods-FluidCash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC861EB1C00F3390099546F /* CoreLocation.framework in Frameworks */,
 				9AC861CC1C00B41D0099546F /* FBSDKLoginKit.framework in Frameworks */,
 				9AC861CE1C00B4210099546F /* FBSDKCoreKit.framework in Frameworks */,
 				5C643F1A6C49BBC1515D3EDC /* Pods_FluidCash.framework in Frameworks */,
@@ -105,6 +110,7 @@
 		923DC0C74352E9ECFE345DB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AC861EA1C00F3390099546F /* CoreLocation.framework */,
 				4A3860183DDC824DAFC90E01 /* Pods_FluidCash.framework */,
 			);
 			name = Frameworks;
@@ -173,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				9AC861D21C00B9E70099546F /* WelcomeViewController.swift */,
+				9AC861E81C00E47F0099546F /* DataGatheringViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -411,6 +418,7 @@
 				9A07104E1C00908D00115AFA /* AppDelegate.swift in Sources */,
 				9AC861E21C00D33D0099546F /* RouterProtocol.swift in Sources */,
 				9AC861DA1C00C8120099546F /* RequestBodyProtocol.swift in Sources */,
+				9AC861E91C00E47F0099546F /* DataGatheringViewController.swift in Sources */,
 				9AC861D61C00C4BC0099546F /* CandidateFacebookData.swift in Sources */,
 				9AC861E01C00CEE50099546F /* NSUserDefaultsUtils.swift in Sources */,
 				9AC861D31C00B9E70099546F /* WelcomeViewController.swift in Sources */,
@@ -556,7 +564,7 @@
 			baseConfigurationReference = A39E7078B309041E2A2C5C8F /* Pods-FluidCash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Aadesh Maheshwari (4JZQ353639)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FluidCash",
@@ -575,7 +583,7 @@
 			baseConfigurationReference = E2E6E6D694B95354BD9CD6C2 /* Pods-FluidCash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Aadesh Maheshwari (4JZQ353639)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FluidCash",

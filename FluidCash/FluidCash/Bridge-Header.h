@@ -11,5 +11,6 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #endif /* Bridge_Header_h */

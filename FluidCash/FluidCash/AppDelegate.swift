@@ -15,6 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+//        NSUserDefaultsUtils.deleteCandidate()
+        
+        if let _ = NSUserDefaultsUtils.getUserAuthToken() {
+            let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let nav = UINavigationController(rootViewController: (storyBoard.instantiateViewControllerWithIdentifier("DataGatheringViewController")))
+            self.window?.rootViewController = nav
+        } else {
+            let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let nav = UINavigationController(rootViewController: (storyBoard.instantiateViewControllerWithIdentifier("WelcomeViewController")))
+            nav.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            nav.navigationBar.shadowImage = UIImage()
+            self.window?.rootViewController = nav
+        }
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 

@@ -35,6 +35,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>FluidCash wants to access your current location</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>FluidCash wants to access your current location</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -110,54 +110,18 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
                 if response.result.isSuccess {
                     
                     var json = JSON(response.result.value!)
+                    print("response \(json)")
                     let authToken = json["token"].string
                     NSUserDefaultsUtils.setUserAuthToken(authToken!)
-
-//                    Alamofire.request(Router.CandidateRouteManager(CandidateRouter.GetMeRequest()))
-//                        .debugLog()
-//                        .validate(statusCode: 200..<300)
-//                        .responseString { _, _, response in
-//                            
-//                            if response.isSuccess {
-//                                NSUserDefaultsUtils.setCandidateDetails(response.value!)
-//                                NSUserDefaultsUtils.setOverlayScreenShown(false)
-//                                ChatSessionHandler.sharedInstance.initializeSession()
-//                                //update the nsuserdefaults
-//                                NSUserDefaults().setBool(true, forKey: displayDemoCards)
-//                                if CandidateUtils.isCandidateOnboarded() {
-//                                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                                    appDelegate.navigateToCompanyProfile()
-//                                    
-//                                } else {
-//                                    // User is still onboarding
-//                                    var _ = ForceUpdate()
-//                                    if let loginSrc = NSUserDefaultsUtils.getLoginSrc() as? String where loginSrc == LoginSrc.Linkedin.rawValue {
-//                                        // Send to gender screen
-//                                        self.nav = UINavigationController(rootViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SelectGenderViewController"))!)
-//                                        self.presentViewController(self.nav, animated: false, completion: nil)
-//                                    } else {
-//                                        if let _ = reqBody.age {
-//                                            self.performSegueWithIdentifier("showAfterLogin", sender: nil)
-//                                        } else {
-//                                            // Send to age screen
-//                                            self.nav = UINavigationController(rootViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SelectAgeViewController"))!)
-//                                            self.presentViewController(self.nav, animated: false, completion: nil)
-//                                        }
-//                                    }
-//                                }
-//                                
-//                            } else {
-//                                // Could not fetch me data
-//                                print(result.value!)
-//                            }
-//                            
-//                    }
+                    
+                    let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                    let dataGatheringViewController = storyBoard.instantiateViewControllerWithIdentifier("DataGatheringViewController")
+                    self.navigationController?.pushViewController(dataGatheringViewController, animated: true)
+                    
                 } else {
                     // On auth fail, send back to login screen asking user to relogin.
                     print("Error \(response.response?.statusCode) message \(response.response?.debugDescription) ")
                 }
-                
-//                self.hideOverlayLoader()
         }
     }
     

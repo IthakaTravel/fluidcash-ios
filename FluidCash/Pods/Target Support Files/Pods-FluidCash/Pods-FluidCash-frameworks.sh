@@ -86,10 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-FluidCash/Alamofire.framework"
   install_framework "Pods-FluidCash/ObjectMapper.framework"
+  install_framework "Pods-FluidCash/SDWebImage.framework"
   install_framework "Pods-FluidCash/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-FluidCash/Alamofire.framework"
   install_framework "Pods-FluidCash/ObjectMapper.framework"
+  install_framework "Pods-FluidCash/SDWebImage.framework"
   install_framework "Pods-FluidCash/SwiftyJSON.framework"
 fi
