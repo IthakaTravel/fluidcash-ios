@@ -20,7 +20,6 @@ enum Router: URLRequestConvertible {
     // Custom variable defined in build.
 //    static let baseURLString = NSBundle.mainBundle().objectForInfoDictionaryKey("API_BASE_URL")! as! String
     static let baseURLString = "http://192.168.2.172:3000"
-    static let googlePlacesBaseURLString = "https://maps.googleapis.com/maps/api/place"
     case AuthRouteManager(AuthRouter)
     
     var URLRequest: NSMutableURLRequest {
@@ -55,8 +54,8 @@ enum Router: URLRequestConvertible {
         
         if let token: AnyObject = NSUserDefaultsUtils.getUserAuthToken() {
             // Auth token exists -> User is loggedin
-//            print("loggedin")
             mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            mutableURLRequest.setValue("\(token)", forHTTPHeaderField: "x-api-token")
             
         } else if let anonymousToken: AnyObject = NSUserDefaultsUtils.getUserAnonymousToken() {
             // No auth token but anonymous token exists -> User is not loggedin & has anonymous token
@@ -81,7 +80,6 @@ enum Router: URLRequestConvertible {
             return mutableURLRequest
         }
     }
-    
     
     func configureGooglePlacesRequest(requestObject: RouterProtocol) -> NSMutableURLRequest{
         

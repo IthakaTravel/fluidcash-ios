@@ -13,12 +13,16 @@ import SwiftyJSON
 enum AuthRouter: RouterProtocol {
     
     case AuthenticateRequest(AuthRequestBody)
+    case SendLocation(LocationBody)
 
     var path: String {
         switch self {
             
             case .AuthenticateRequest:
                 return "/users/login"
+            
+            case .SendLocation:
+                return "/locations"
         }
     }
     
@@ -26,7 +30,8 @@ enum AuthRouter: RouterProtocol {
         switch self {
             case .AuthenticateRequest:
                 return .POST
-        
+            case .SendLocation:
+                return .POST
         }
     }
     
@@ -44,6 +49,9 @@ enum AuthRouter: RouterProtocol {
             
             case .AuthenticateRequest(let candidateFacebookData):
                 return candidateFacebookData
+            
+            case .SendLocation(let cordinatesData):
+                return cordinatesData
         }
     }
 }

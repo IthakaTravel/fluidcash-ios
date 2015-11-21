@@ -10,6 +10,24 @@ import UIKit
 import ObjectMapper
 import SDWebImage
 import CoreLocation
+import Alamofire
+import SwiftyJSON
+
+class LocationBody: RequestBody {
+    var latitude: Float = 0
+    var longitude: Float = 0
+    var accuracyInMeters: Int = 10
+    
+    class func newInstance(map: Map) -> Mappable? {
+        return AuthRequestBody()
+    }
+    
+    override func mapping(map: Map) {
+        latitude   <- map["latitude"]
+        longitude   <- map["longitude"]
+        accuracyInMeters   <- map["accuracy"]
+    }
+}
 
 class DataGatheringViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -17,6 +35,7 @@ class DataGatheringViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var amountTestField: UITextField!
     let locationManager = CLLocationManager()
     var currentUserLocation: CLLocation?
+    var locationUpdatedToServer: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +76,31 @@ class DataGatheringViewController: UIViewController, CLLocationManagerDelegate {
         currentUserLocation = manager.location
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
+        if !self.locationUpdatedToServer {
+            let locationBody = LocationBody()
+            locationBody.latitude = Float(locValue.latitude)
+            locationBody.longitude = Float(locValue.longitude)
+            sendLocation(locationBody)
+        }
+    }
+    
+    func sendLocation(reqBody: LocationBody) {
+        
+        //send logged in data to server
+        Alamofire.request(Router.AuthRouteManager(AuthRouter.SendLocation(reqBody)))
+            .debugLog()
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                
+                if response.result.isSuccess {
+                    let json = JSON(response.result.value!)
+                    print("response \(json)")
+                    self.locationUpdatedToServer = true
+                } else {
+                    // On auth fail, send back to login screen asking user to relogin.
+                    print("Error \(response.response?.statusCode) message \(response.response?.debugDescription) ")
+                }
+        }
     }
 
     override func didReceiveMemoryWarning() {
