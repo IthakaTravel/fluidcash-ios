@@ -1,0 +1,6 @@
+[submodule "vendor/plugins/open_flash_chart_2"]
+	path = vendor/plugins/open_flash_chart_2
+	url = https://github.com/IthakaTravel/fluidcash-ios.git
+[submodule "FluidCash"]
+	path = FluidCash
+	url = https://github.com/IthakaTravel/fluidcash-ios.git
