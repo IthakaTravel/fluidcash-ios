@@ -20,6 +20,10 @@
 		9AC861D61C00C4BC0099546F /* CandidateFacebookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861D51C00C4BC0099546F /* CandidateFacebookData.swift */; };
 		9AC861DA1C00C8120099546F /* RequestBodyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861D81C00C8120099546F /* RequestBodyProtocol.swift */; };
 		9AC861DD1C00C86D0099546F /* RequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861DC1C00C86D0099546F /* RequestBody.swift */; };
+		9AC861E01C00CEE50099546F /* NSUserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861DF1C00CEE50099546F /* NSUserDefaultsUtils.swift */; };
+		9AC861E21C00D33D0099546F /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861E11C00D33D0099546F /* RouterProtocol.swift */; };
+		9AC861E51C00D36D0099546F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861E41C00D36D0099546F /* Router.swift */; };
+		9AC861E71C00D3D00099546F /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC861E61C00D3D00099546F /* AuthRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,10 @@
 		9AC861D51C00C4BC0099546F /* CandidateFacebookData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CandidateFacebookData.swift; path = Models/CandidateFacebookData.swift; sourceTree = "<group>"; };
 		9AC861D81C00C8120099546F /* RequestBodyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestBodyProtocol.swift; path = Models/Protocols/RequestBodyProtocol.swift; sourceTree = "<group>"; };
 		9AC861DC1C00C86D0099546F /* RequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestBody.swift; path = Models/Protocols/RequestBody.swift; sourceTree = "<group>"; };
+		9AC861DF1C00CEE50099546F /* NSUserDefaultsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaultsUtils.swift; path = Models/Utils/NSUserDefaultsUtils.swift; sourceTree = "<group>"; };
+		9AC861E11C00D33D0099546F /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterProtocol.swift; path = Models/Protocols/RouterProtocol.swift; sourceTree = "<group>"; };
+		9AC861E41C00D36D0099546F /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Models/Router/Router.swift; sourceTree = "<group>"; };
+		9AC861E61C00D3D00099546F /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthRouter.swift; path = Models/Router/AuthRouter.swift; sourceTree = "<group>"; };
 		A39E7078B309041E2A2C5C8F /* Pods-FluidCash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FluidCash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FluidCash/Pods-FluidCash.debug.xcconfig"; sourceTree = "<group>"; };
 		E2E6E6D694B95354BD9CD6C2 /* Pods-FluidCash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FluidCash.release.xcconfig"; path = "Pods/Target Support Files/Pods-FluidCash/Pods-FluidCash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +180,8 @@
 		9AC861D41C00C4980099546F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9AC861E31C00D3580099546F /* Router */,
+				9AC861DE1C00CE4B0099546F /* Utils */,
 				9AC861D71C00C8050099546F /* Protocols */,
 				9AC861D51C00C4BC0099546F /* CandidateFacebookData.swift */,
 			);
@@ -181,10 +191,28 @@
 		9AC861D71C00C8050099546F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9AC861E11C00D33D0099546F /* RouterProtocol.swift */,
 				9AC861DC1C00C86D0099546F /* RequestBody.swift */,
 				9AC861D81C00C8120099546F /* RequestBodyProtocol.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9AC861DE1C00CE4B0099546F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9AC861DF1C00CEE50099546F /* NSUserDefaultsUtils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		9AC861E31C00D3580099546F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9AC861E61C00D3D00099546F /* AuthRouter.swift */,
+				9AC861E41C00D36D0099546F /* Router.swift */,
+			);
+			name = Router;
 			sourceTree = "<group>";
 		};
 		FB25A9E8C52CECFEA30804B2 /* Pods */ = {
@@ -379,10 +407,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC861E51C00D36D0099546F /* Router.swift in Sources */,
 				9A07104E1C00908D00115AFA /* AppDelegate.swift in Sources */,
+				9AC861E21C00D33D0099546F /* RouterProtocol.swift in Sources */,
 				9AC861DA1C00C8120099546F /* RequestBodyProtocol.swift in Sources */,
 				9AC861D61C00C4BC0099546F /* CandidateFacebookData.swift in Sources */,
+				9AC861E01C00CEE50099546F /* NSUserDefaultsUtils.swift in Sources */,
 				9AC861D31C00B9E70099546F /* WelcomeViewController.swift in Sources */,
+				9AC861E71C00D3D00099546F /* AuthRouter.swift in Sources */,
 				9AC861DD1C00C86D0099546F /* RequestBody.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,34 @@
 
 import UIKit
 import ObjectMapper
+import Alamofire
+import SwiftyJSON
+
+class AuthRequestBody: RequestBody {
+    var token: String?
+    var id: String?
+    var firstName: String?
+    var lastName: String?
+    var email: String?
+    var profilePic: String?
+    var gender: String?
+    var age: Int?
+    
+    class func newInstance(map: Map) -> Mappable? {
+        return AuthRequestBody()
+    }
+    
+    override func mapping(map: Map) {
+        token       <- map["token"]
+        id          <- map["id"]
+        firstName   <- map["firstName"]
+        lastName    <- map["lastName"]
+        email       <- map["email"]
+        profilePic  <- map["profilePic"]
+        gender      <- map["gender"]
+        age         <- map["age"]
+    }
+}
 
 class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
 
@@ -51,31 +79,16 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
                     
                     let candidateFbDetails = Mapper().toJSONString(candidateFacebookData, prettyPrint: false)
                     print(" candidate FB details \(candidateFbDetails)")
-//                    NSUserDefaultsUtils.setCandidateFacebookDetails(candidateFbDetails!)
-//                    
-//                    NSUserDefaultsUtils.setLoginSrc(LoginSrc.Facebook.rawValue)
-//                    
-//                    let authRequestBody = AuthRequestBody()
-//                    authRequestBody.type = candidateFacebookData.type
-//                    authRequestBody.token = candidateFacebookData.token
-//                    authRequestBody.firstName = candidateFacebookData.firstName
-//                    authRequestBody.lastName = candidateFacebookData.lastName
-//                    authRequestBody.profilePic = candidateFacebookData.profilePic
-//                    authRequestBody.id = candidateFacebookData.id
-//                    authRequestBody.email = candidateFacebookData.email
-//                    
-//                    if let _: String = candidateFacebookData.gender {
-//                        authRequestBody.gender = candidateFacebookData.gender
-//                    }
-//                    
-//                    if let _: Int = candidateFacebookData.age {
-//                        NSUserDefaultsUtils.setDoesNotHaveAge(false)
-//                        authRequestBody.age = candidateFacebookData.age
-//                    } else {
-//                        NSUserDefaultsUtils.setDoesNotHaveAge(true)
-//                    }
-//                    
-//                    self.authenticate(authRequestBody)
+                    NSUserDefaultsUtils.setCandidateFacebookDetails(candidateFbDetails!)
+                
+                    let authRequestBody = AuthRequestBody()
+                    authRequestBody.token = candidateFacebookData.token
+                    authRequestBody.firstName = candidateFacebookData.firstName
+                    authRequestBody.lastName = candidateFacebookData.lastName
+                    authRequestBody.profilePic = candidateFacebookData.profilePicURL
+                    authRequestBody.id = candidateFacebookData.id
+                    authRequestBody.email = candidateFacebookData.email
+                    self.authenticate(authRequestBody)
                     
                 } else {
                     print(error)
@@ -86,7 +99,67 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-    
+    func authenticate(reqBody: AuthRequestBody) {
+        
+        //send logged in data to server
+        Alamofire.request(Router.AuthRouteManager(AuthRouter.AuthenticateRequest(reqBody)))
+            .debugLog()
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                
+                if response.result.isSuccess {
+                    
+                    var json = JSON(response.result.value!)
+                    let authToken = json["token"].string
+                    NSUserDefaultsUtils.setUserAuthToken(authToken!)
+
+//                    Alamofire.request(Router.CandidateRouteManager(CandidateRouter.GetMeRequest()))
+//                        .debugLog()
+//                        .validate(statusCode: 200..<300)
+//                        .responseString { _, _, response in
+//                            
+//                            if response.isSuccess {
+//                                NSUserDefaultsUtils.setCandidateDetails(response.value!)
+//                                NSUserDefaultsUtils.setOverlayScreenShown(false)
+//                                ChatSessionHandler.sharedInstance.initializeSession()
+//                                //update the nsuserdefaults
+//                                NSUserDefaults().setBool(true, forKey: displayDemoCards)
+//                                if CandidateUtils.isCandidateOnboarded() {
+//                                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//                                    appDelegate.navigateToCompanyProfile()
+//                                    
+//                                } else {
+//                                    // User is still onboarding
+//                                    var _ = ForceUpdate()
+//                                    if let loginSrc = NSUserDefaultsUtils.getLoginSrc() as? String where loginSrc == LoginSrc.Linkedin.rawValue {
+//                                        // Send to gender screen
+//                                        self.nav = UINavigationController(rootViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SelectGenderViewController"))!)
+//                                        self.presentViewController(self.nav, animated: false, completion: nil)
+//                                    } else {
+//                                        if let _ = reqBody.age {
+//                                            self.performSegueWithIdentifier("showAfterLogin", sender: nil)
+//                                        } else {
+//                                            // Send to age screen
+//                                            self.nav = UINavigationController(rootViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SelectAgeViewController"))!)
+//                                            self.presentViewController(self.nav, animated: false, completion: nil)
+//                                        }
+//                                    }
+//                                }
+//                                
+//                            } else {
+//                                // Could not fetch me data
+//                                print(result.value!)
+//                            }
+//                            
+//                    }
+                } else {
+                    // On auth fail, send back to login screen asking user to relogin.
+                    print("Error \(response.response?.statusCode) message \(response.response?.debugDescription) ")
+                }
+                
+//                self.hideOverlayLoader()
+        }
+    }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("Logout")

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '42129B0F751D844840BC1446'
+               BlueprintIdentifier = '0F3514CF4EE6F0302B36D0ED'
                BlueprintName = 'Pods-FluidCash'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_FluidCash.framework'>
