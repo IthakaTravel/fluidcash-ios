@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+        </mutableArray>
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="FluidCash" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fluid Cash" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dp-sb-XRj">
+                                <rect key="frame" x="231" y="48" width="139" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="TAg-rr-lfs"/>
+                                    <constraint firstAttribute="width" constant="139" id="VFg-fy-ugY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exchange currencies quick and easy with another person" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lb7-fM-vra">
+                                <rect key="frame" x="20" y="102" width="560" height="53"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="j4j-qH-Tuk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashimage" translatesAutoresizingMaskIntoConstraints="NO" id="Ut1-vw-bPf">
+                                <rect key="frame" x="236" y="217" width="128" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="JTg-YK-uXO"/>
+                                    <constraint firstAttribute="width" constant="128" id="jSS-PW-fxU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gn-M4-Bht">
+                                <rect key="frame" x="213" y="371" width="174" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="8wy-Vw-0W6"/>
+                                    <constraint firstAttribute="height" constant="21" id="tiV-yP-QEi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lb7-fM-vra" firstAttribute="centerX" secondItem="2Dp-sb-XRj" secondAttribute="centerX" id="677-Fv-vPl"/>
+                            <constraint firstItem="8Gn-M4-Bht" firstAttribute="centerX" secondItem="Ut1-vw-bPf" secondAttribute="centerX" id="8H3-fz-Ogf"/>
+                            <constraint firstItem="Lb7-fM-vra" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ZVv-Es-f0i"/>
+                            <constraint firstAttribute="trailing" secondItem="Lb7-fM-vra" secondAttribute="trailing" constant="20" id="aX1-aK-hfA"/>
+                            <constraint firstItem="2Dp-sb-XRj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="eAp-GZ-9tQ"/>
+                            <constraint firstItem="8Gn-M4-Bht" firstAttribute="top" secondItem="Ut1-vw-bPf" secondAttribute="bottom" constant="26" id="mkM-JJ-pZQ"/>
+                            <constraint firstItem="Ut1-vw-bPf" firstAttribute="top" secondItem="Lb7-fM-vra" secondAttribute="bottom" constant="62" id="oI3-a9-rWf"/>
+                            <constraint firstItem="2Dp-sb-XRj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oKn-E0-iKz"/>
+                            <constraint firstItem="Ut1-vw-bPf" firstAttribute="centerX" secondItem="Lb7-fM-vra" secondAttribute="centerX" id="ozD-BH-Res"/>
+                            <constraint firstItem="Lb7-fM-vra" firstAttribute="top" secondItem="2Dp-sb-XRj" secondAttribute="bottom" constant="33" id="zxn-4o-fhl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UFh-yg-UqW"/>
+                    <connections>
+                        <outlet property="singUpLabel" destination="8Gn-M4-Bht" id="sWI-IR-lr6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061" y="349"/>
+        </scene>
+        <!--Data Gathering View Controller-->
+        <scene sceneID="N2E-o3-AEi">
+            <objects>
+                <viewController storyboardIdentifier="DataGatheringViewController" id="JX7-ej-aMD" customClass="DataGatheringViewController" customModule="FluidCash" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DtO-AW-210"/>
+                        <viewControllerLayoutGuide type="bottom" id="kkW-M6-DGu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pW9-cy-aIJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I want to exchange" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwH-gQ-69d">
+                                <rect key="frame" x="214" y="70" width="171" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="RkF-E9-uHd"/>
+                                    <constraint firstAttribute="width" constant="171" id="aB9-UP-7N7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Currency" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHR-9r-yM3">
+                                <rect key="frame" x="158" y="148" width="282" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="282" id="Vzh-nN-XQT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6G-gN-KDx">
+                                <rect key="frame" x="287" y="266" width="25.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Currency" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nmg-dM-eev">
+                                <rect key="frame" x="159" y="305" width="282" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="282" id="933-2r-snF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Je-yd-dOE">
+                                <rect key="frame" x="145.5" y="445" width="310" height="35"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="0.73725490196078436" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="RXN-V1-1dZ"/>
+                                    <constraint firstAttribute="width" constant="310" id="y1T-d0-fjr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                <state key="normal" title="Make Magic">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SNh-mC-Xou">
+                                <rect key="frame" x="158" y="195" width="282" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="282" id="VOU-82-3KB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dHR-9r-yM3" firstAttribute="centerX" secondItem="ZwH-gQ-69d" secondAttribute="centerX" id="3UQ-Sg-fzF"/>
+                            <constraint firstItem="ZwH-gQ-69d" firstAttribute="top" secondItem="DtO-AW-210" secondAttribute="bottom" constant="50" id="48O-kX-22m"/>
+                            <constraint firstItem="SNh-mC-Xou" firstAttribute="centerX" secondItem="dHR-9r-yM3" secondAttribute="centerX" id="ARk-JF-Yfu"/>
+                            <constraint firstItem="9Je-yd-dOE" firstAttribute="top" secondItem="Nmg-dM-eev" secondAttribute="bottom" constant="110" id="B7d-Hd-ITr"/>
+                            <constraint firstItem="Nmg-dM-eev" firstAttribute="top" secondItem="A6G-gN-KDx" secondAttribute="bottom" constant="18.5" id="Hbf-h4-EhM"/>
+                            <constraint firstItem="A6G-gN-KDx" firstAttribute="top" secondItem="SNh-mC-Xou" secondAttribute="bottom" constant="41" id="Xw5-Cf-guC"/>
+                            <constraint firstItem="9Je-yd-dOE" firstAttribute="centerX" secondItem="Nmg-dM-eev" secondAttribute="centerX" id="a3w-YL-UHR"/>
+                            <constraint firstItem="SNh-mC-Xou" firstAttribute="top" secondItem="dHR-9r-yM3" secondAttribute="bottom" constant="17" id="cGE-l5-fUv"/>
+                            <constraint firstItem="dHR-9r-yM3" firstAttribute="top" secondItem="ZwH-gQ-69d" secondAttribute="bottom" constant="57" id="hxz-9U-QRz"/>
+                            <constraint firstItem="ZwH-gQ-69d" firstAttribute="centerX" secondItem="pW9-cy-aIJ" secondAttribute="centerX" id="j9y-8a-LtL"/>
+                            <constraint firstItem="A6G-gN-KDx" firstAttribute="centerX" secondItem="pW9-cy-aIJ" secondAttribute="centerX" id="wYU-L2-tWa"/>
+                            <constraint firstItem="Nmg-dM-eev" firstAttribute="centerX" secondItem="A6G-gN-KDx" secondAttribute="centerX" id="yRx-gD-WPe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amountTestField" destination="SNh-mC-Xou" id="cK5-2R-MX4"/>
+                        <outlet property="makeMagicButton" destination="9Je-yd-dOE" id="LZa-wE-KIf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNU-pw-XfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1678" y="350"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splashimage" width="111" height="105"/>
+    </resources>
+</document>
